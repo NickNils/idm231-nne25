@@ -1,0 +1,77 @@
+:root {
+    --background-color: #FFD600;
+    --button-hover: #4B4948;
+    --normal-button: #E64D00;
+    --white: #FCFAEF;
+    --black: #140101;
+    --button-shadow: #14010152;
+
+
+    --normal-type: franklin-gothic-urw, sans-serif;
+    --horoscope-type: ohno-blazeface, sans-serif;
+
+    --rhythm: 0.5rem;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+}
+
+body{
+    background-color: var(--background-color);
+}
+
+main {
+    margin: calc(var(--rhythm) * 12) auto;
+    width: calc(var(--rhythm) * 150);
+}
+
+h1, p, input {
+    font-family: var(--normal-type);
+}
+
+button {
+    font-family: var(--horoscope-type);
+}
+
+h1 {
+    margin-bottom: calc(var(--rhythm) * 2);
+    text-transform: uppercase;
+    font-size: 80px;
+    font-weight: 900;
+}
+
+section {
+    display: grid;
+    grid-template-columns: 52% 48%;
+    gap: calc(var(--rhythm) * 3);
+
+}
+
+ul{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(var(--rhythm) * 2);
+}
+
+button {
+    border: none;
+    height: calc(var(--rhythm) * 15);
+    width: 100%;
+    background-color: var(--white);
+    color:  var(--button-hover);
+    transition-duration: 0.1s;
+}
+
+button:hover {
+    color: var(--white);  
+    background-color:  var(--button-hover);
+}
+
+button:active {
+    box-shadow: -4px 6px 8px 0px var(--button-shadow)
+}
