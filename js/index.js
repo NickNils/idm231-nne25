@@ -73,11 +73,20 @@ console.log('hi');
         name : 'Robert Indiana',
         key : 'virgo',
     },
-     
   ]
 
 function make_buttons() {
-    artists.forEach(element => {
-        
-    });
-}
+    const list = document.getElementById('button_list');
+    for (let i = 0; i < artists.length; i++) {
+        let list_item = document.createElement('li');
+        let button = document.createElement('button');
+        let sign_name = artists[i].key.toUpperCase();
+        let button_text = document.createTextNode(sign_name);
+        button.appendChild(button_text);
+        button.setAttribute('id', artists[i].key);
+        list_item.appendChild(button);
+        list.appendChild(list_item);
+    }
+};
+
+make_buttons();
