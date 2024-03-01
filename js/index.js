@@ -1,29 +1,29 @@
 // let astrological_sign;
 
 // if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
-//     astrological_sign = 'Capricorn'
+//     astrological_sign = 'capricorn'
 //   } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
-//     astrological_sign = 'Sagittarius'
+//     astrological_sign = 'sagittarius'
 //   } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
-//     astrological_sign = 'Scorpio'
+//     astrological_sign = 'scorpio'
 //   } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
-//     astrological_sign = 'Libra'
+//     astrological_sign = 'libra'
 //   } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
-//     astrological_sign = 'Virgo'
+//     astrological_sign = 'virgo'
 //   } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
-//     astrological_sign = 'Leo'
+//     astrological_sign = 'leo'
 //   } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
-//     astrological_sign = 'Cancer'
+//     astrological_sign = 'cancer'
 //   } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
-//     astrological_sign = 'Gemini'
+//     astrological_sign = 'gemini'
 //   } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
-//     astrological_sign = 'Taurus'
+//     astrological_sign = 'taurus'
 //   } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
-//     astrological_sign = 'Aries'
+//     astrological_sign = 'aries'
 //   } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
-//     astrological_sign = 'Pisces'
+//     astrological_sign = 'pisces'
 //   } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
-//     astrological_sign = 'Aquarius'
+//     astrological_sign = 'aquarius'
 //   }
 
 
