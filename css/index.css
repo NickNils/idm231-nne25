@@ -34,7 +34,7 @@ h1, p, input {
     font-family: var(--normal-type);
 }
 
-button {
+.horoscope_button {
     font-family: var(--horoscope-type);
 }
 
@@ -58,7 +58,7 @@ ul{
     gap: calc(var(--rhythm) * 2);
 }
 
-button {
+.horoscope_button {
     border: none;
     height: calc(var(--rhythm) * 15);
     width: 100%;
@@ -67,11 +67,11 @@ button {
     transition-duration: 0.1s;
 }
 
-button:hover {
+.horoscope_button:hover {
     color: var(--white);  
     background-color:  var(--button-hover);
 }
 
-button:active {
+.horoscope_button:active {
     box-shadow: -4px 6px 8px 0px var(--button-shadow)
 }

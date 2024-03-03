@@ -1,33 +1,3 @@
-// let astrological_sign;
-
-// if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
-//     astrological_sign = 'capricorn'
-//   } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
-//     astrological_sign = 'sagittarius'
-//   } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
-//     astrological_sign = 'scorpio'
-//   } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
-//     astrological_sign = 'libra'
-//   } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
-//     astrological_sign = 'virgo'
-//   } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
-//     astrological_sign = 'leo'
-//   } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
-//     astrological_sign = 'cancer'
-//   } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
-//     astrological_sign = 'gemini'
-//   } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
-//     astrological_sign = 'taurus'
-//   } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
-//     astrological_sign = 'aries'
-//   } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
-//     astrological_sign = 'pisces'
-//   } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
-//     astrological_sign = 'aquarius'
-//   }
-
-
-
   const artists = [
     {
         image: 'assets/images/kusama.jpeg',
@@ -118,6 +88,64 @@ function change_title(artist_number) {
 }
 
 
+// RETRIEVING DATES ==============================================================================================================================
+
+const form = document.querySelector('form');
+
+let astrological_sign;
+
+function decipher_dates(month, day) {
+    if ((month === 12 && day >= 22) || (month === 1 && day <= 19)) {
+        astrological_sign = 'capricorn'
+      } else if ((month === 11 && day >= 22) || (month === 12 && day <= 21)) {
+        astrological_sign = 'sagittarius'
+      } else if ((month === 10 && day >= 24) || (month === 11 && day <= 21)) {
+        astrological_sign = 'scorpio'
+      } else if ((month === 9 && day >= 23) || (month === 10 && day <= 23)) {
+        astrological_sign = 'libra'
+      } else if ((month === 8 && day >= 23) || (month === 9 && day <= 22)) {
+        astrological_sign = 'virgo'
+      } else if ((month === 7 && day >= 23) || (month === 8 && day <= 22)) {
+        astrological_sign = 'leo'
+      } else if ((month === 6 && day >= 22) || (month === 7 && day <= 22)) {
+        astrological_sign = 'cancer'
+      } else if ((month === 5 && day >= 21) || (month === 6 && day <= 21)) {
+        astrological_sign = 'gemini'
+      } else if ((month === 4 && day >= 20) || (month === 5 && day <= 20)) {
+        astrological_sign = 'taurus'
+      } else if ((month === 3 && day >= 21) || (month === 4 && day <= 19)) {
+        astrological_sign = 'aries'
+      } else if ((month === 2 && day >= 19) || (month === 3 && day <= 20)) {
+        astrological_sign = 'pisces'
+      } else if ((month === 1 && day >= 20) || (month === 2 && day <= 18)) {
+        astrological_sign = 'aquarius'
+      }
+      return astrological_sign;
+}
+
+function log_birthday(birthday) {
+  const date = {
+    year: birthday[0],
+    month: birthday[1],
+    day: birthday[2],
+  };
+  return date;
+}
+
+function handle_submit(event) {
+  event.preventDefault();
+
+  const date_object = log_birthday(form.elements['birthday'].value.split('-'));
+  console.log('date_object', date_object);
+  console.log(decipher_dates(date_object.month * 1, date_object.day * 1));
+}
+
+if (form) {
+  form.addEventListener('submit', handle_submit, false);
+}
+
+// RETRIEVING DATES ==============================================================================================================================
+
 
 function button_press() {
     for (let i = 0; i < buttons_array.length; i++) {
@@ -137,15 +165,17 @@ function make_buttons() {
         let button_text = document.createTextNode(sign_name);
         button.appendChild(button_text);
         button.setAttribute('id', artists[i].key);
+        button.setAttribute('class', 'horoscope_button');
         list_item.appendChild(button);
         list.appendChild(list_item);
     }
 };
 
 
-
 make_buttons();
 button_press();
+
+// console.log(decipher_dates(07, 21));
 
 
 
