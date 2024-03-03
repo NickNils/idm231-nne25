@@ -137,7 +137,8 @@ function handle_submit(event) {
 
   const date_object = log_birthday(form.elements['birthday'].value.split('-'));
   console.log('date_object', date_object);
-  console.log(decipher_dates(date_object.month * 1, date_object.day * 1));
+  const date_sign = (decipher_dates(date_object.month * 1, date_object.day * 1));
+  console.log(date_sign);
 }
 
 if (form) {
