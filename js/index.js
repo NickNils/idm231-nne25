@@ -142,6 +142,8 @@ function handle_submit(event) {
     if (date_sign === artists[i].key) {
       change_title(i);
       change_image(i);
+      sound_file = artists[i].song;
+      play_audio(music_box, sound_file);
     }
   }
 }
@@ -154,9 +156,9 @@ if (form) {
 
 
 
-// AUDIO STUFF ==============================================================================================================================
+// \/\/\/\/AUDIO STUFF ==============================================================================================================================
 
-let sound_file = "assets/music/song_10.mp3";
+let sound_file = "assets/music/song_1.mp3";
 const audio_element = new Audio(sound_file);
 
 
@@ -171,9 +173,7 @@ function play_audio(audio_element, src) {
   audio_element.play();
 }
 
-
-
-// AUDIO STUFF ==============================================================================================================================
+// ^^^^^ AUDIO STUFF ==============================================================================================================================
 
 
 
@@ -184,7 +184,6 @@ function button_press() {
             change_title(i);
             change_image(i);
             sound_file = artists[i].song;
-            console.log(sound_file);
             play_audio(music_box, sound_file);
         });
     }
