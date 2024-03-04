@@ -6,7 +6,7 @@
         key : 'aries',
     },
     {
-        image : 'assets/images/harring.jpg',
+        image : 'assets/images/harring.jpeg',
         song : 'assets/music/song_02.mp3',
         name : 'Keith Haring',
         key : 'taurus',
@@ -18,13 +18,13 @@
         key : 'capricorn',
     },
     {
-        image : 'assets/images/escher.jpg',
+        image : 'assets/images/escher.jpeg',
         song : 'assets/music/song_04.mp3',
         name : 'MC Escher',
         key : 'gemini',
     },
     {
-        image : 'assets/images/hopper.jpg',
+        image : 'assets/images/hopper.jpeg',
         song : 'assets/music/song_05.mp3',
         name : 'Edward Hopper',
         key : 'cancer',
@@ -73,7 +73,7 @@
     },
   ]
 
-const buttons_array = document.getElementsByTagName('button');
+const buttons_array = document.getElementsByClassName('horoscope_button');
 
 const current_image = document.getElementById('art_image');
 
@@ -88,7 +88,7 @@ function change_title(artist_number) {
 }
 
 
-// RETRIEVING DATES ==============================================================================================================================
+// DATE INPUT STUFF ==============================================================================================================================
 
 const form = document.querySelector('form');
 
@@ -136,16 +136,46 @@ function handle_submit(event) {
   event.preventDefault();
 
   const date_object = log_birthday(form.elements['birthday'].value.split('-'));
-  console.log('date_object', date_object);
   const date_sign = (decipher_dates(date_object.month * 1, date_object.day * 1));
-  console.log(date_sign);
+
+  for (let i = 0; i < artists.length; i++) {
+    if (date_sign === artists[i].key) {
+      change_title(i);
+      change_image(i);
+    }
+  }
 }
 
 if (form) {
   form.addEventListener('submit', handle_submit, false);
 }
 
-// RETRIEVING DATES ==============================================================================================================================
+// DATE INPUT STUFF ==============================================================================================================================
+
+
+
+// AUDIO STUFF ==============================================================================================================================
+
+let sound_file = "assets/music/song_10.mp3";
+const audio_element = new Audio(sound_file);
+
+
+const music_box = document.getElementById('music_box');
+
+function play_audio(audio_element, src) {
+  if (audio_element && !audio_element.paused) {
+    audio_element.pause();
+    audio_element.currentTime = 0;
+  }
+  audio_element.src = src;
+  audio_element.play();
+}
+
+
+
+// AUDIO STUFF ==============================================================================================================================
+
+
 
 
 function button_press() {
@@ -153,6 +183,9 @@ function button_press() {
         buttons_array[i].addEventListener('click', () => {
             change_title(i);
             change_image(i);
+            sound_file = artists[i].song;
+            console.log(sound_file);
+            play_audio(music_box, sound_file);
         });
     }
 };
