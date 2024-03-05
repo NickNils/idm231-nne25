@@ -158,7 +158,7 @@ if (form) {
 
 // \/\/\/\/AUDIO STUFF ==============================================================================================================================
 
-let sound_file = "assets/music/song_1.mp3";
+let sound_file;
 const audio_element = new Audio(sound_file);
 
 
