@@ -70,7 +70,7 @@ ul{
     transition-duration: 0.1s;
 }
 
-.horoscope_button:hover {
+.horoscope_button:hover, .horoscope_button:link {
     color: var(--white);  
     background-color:  var(--button-hover);
 }
@@ -99,6 +99,17 @@ form > div > button {
     color: var(--white);
     font-size: calc(var(--rhythm) * 2);
 }
+
+form > div > button:hover {
+    border: none;
+    background-color: var(--white);
+    color: var(--normal-button);
+}
+
+form > div > button:active {
+    box-shadow: -4px 6px 8px 0px var(--button-shadow)
+}
+
 
 /* form > div > button:hover {
     background-color: var(--white);
