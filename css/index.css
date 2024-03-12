@@ -28,7 +28,7 @@ main {
     position: relative; */
 }
 
-h1, p, input, label, h2 {
+h1, p, input, label, h2, a {
     font-family: var(--normal-type);
 }
 
@@ -145,4 +145,13 @@ form > div > input {
 h2 {
     font-size: calc(var(--rhythm) * 3);
     font-weight: 700;
+}
+
+a:link, a:visited {
+    text-decoration: none;
+    color: var(--normal-button);
+}
+
+a:active, a:hover {
+    color: var(--white);
 }
