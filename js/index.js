@@ -199,11 +199,16 @@ function play_audio(audio_element, src) {
 function button_press() {
     for (let i = 0; i < buttons_array.length; i++) {
         buttons_array[i].addEventListener('click', () => {
-            change_title(i);
-            change_image(i);
-            sound_file = artists[i].song;
-            play_audio(music_box, sound_file);
-            change_description(i);
+          for (let z = 0; z < buttons_array.length; z++) {
+            if (buttons_array[z].classList.contains('bg_img')) {
+              buttons_array[z].classList.remove('bg_img');
+            }
+          }
+          change_title(i);
+          change_image(i);
+          sound_file = artists[i].song;
+          play_audio(music_box, sound_file);
+          change_description(i);
         });
     }
 };
@@ -224,13 +229,7 @@ function make_buttons() {
 };
 
 
+
+
 make_buttons();
 button_press();
-
-// console.log(decipher_dates(07, 21));
-
-
-
-// function change_image_test() {
-//     image_test.src = artists[3].image;
-// };

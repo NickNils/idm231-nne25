@@ -44,6 +44,12 @@ h1 {
     text-align: center;
 }
 
+p {
+    line-height: 1.4;
+    font-size: calc(var(--rhythm) * 2.5);
+    max-width: 65ch;
+}
+
 section {
     display: grid;
     grid-template-columns: 52% 48%;
@@ -57,7 +63,9 @@ ul{
     gap: calc(var(--rhythm) * 2);
 }
 
+
 .horoscope_button {
+    font-size: calc(var(--rhythm) * 2.5);
     border: none;
     height: calc(var(--rhythm) * 15);
     width: 100%;
@@ -66,13 +74,18 @@ ul{
     transition-duration: 0.1s;
 }
 
-.horoscope_button:hover, .horoscope_button:link {
+.horoscope_button:hover {
     color: var(--white);  
     background-color:  var(--button-hover);
 }
 
 .horoscope_button:active {
     box-shadow: -4px 6px 8px 0px var(--button-shadow)
+}
+
+.bg_img {
+    color: var(--white);
+    background-color:  var(--button-hover);
 }
 
 form {
@@ -116,7 +129,6 @@ form > div > input {
 
 
 .fill {
-    margin: calc(var(--rhythm) * 3) 0 var(--rhythm);
     height: 550px;
 }
 
@@ -140,6 +152,7 @@ form > div > input {
 .info_page div {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: calc(var(--rhythm) * 3);
 }
 
@@ -149,6 +162,7 @@ h2 {
 }
 
 a:link, a:visited {
+    font-size: calc(var(--rhythm) * 2.5);
     text-decoration: none;
     color: var(--normal-button);
 }
