@@ -1,7 +1,7 @@
 :root {
     --background-color: #FFD600;
-    --button-hover: #4B4948;
-    --normal-button: #E64D00;
+    --button-normal: #4B4948;
+    --button-hover: #E64D00;
     --white: #FCFAEF;
     --black: #140101;
     --button-shadow: #14010152;
@@ -69,23 +69,18 @@ ul{
     border: none;
     height: calc(var(--rhythm) * 15);
     width: 100%;
-    background-color: var(--white);
-    color:  var(--button-hover);
+    background-color: var(--button-normal);
+    color:  var(--white);
     transition-duration: 0.1s;
 }
 
-.horoscope_button:hover {
+.horoscope_button:hover, .horoscope_button:focus {
     color: var(--white);  
     background-color:  var(--button-hover);
 }
 
 .horoscope_button:active {
     box-shadow: -4px 6px 8px 0px var(--button-shadow)
-}
-
-.bg_img {
-    color: var(--white);
-    background-color:  var(--button-hover);
 }
 
 form {
@@ -104,7 +99,7 @@ form > div {
 
 form > div > button {
     border: none;
-    background-color: var(--normal-button);
+    background-color: var(--button-hover);
     color: var(--white);
     font-size: calc(var(--rhythm) * 2);
 }
@@ -112,7 +107,7 @@ form > div > button {
 form > div > button:hover {
     border: none;
     background-color: var(--white);
-    color: var(--normal-button);
+    color: var(--button-hover);
 }
 
 form > div > button:active {

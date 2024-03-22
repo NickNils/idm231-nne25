@@ -159,9 +159,14 @@ function handle_submit(event) {
     if (date_sign === artists[i].key) {
       change_title(i);
       change_image(i);
+
+      document.getElementById(artists[i].key).click();
+      document.getElementById(artists[i].key).focus();
+
       sound_file = artists[i].song;
       play_audio(music_box, sound_file);
       change_description(i);
+
     }
   }
 }
